@@ -1,0 +1,541 @@
+/* =====================================================================
+   RUMAH KOST KEBALEN — EXECUTIVE CINEMATIC LANDING SYSTEM
+   High-Converting, Elevated Minimalist Luxury (Cleaned Carrd Architecture)
+   ===================================================================== */
+
+:root {
+  /* Colors */
+  --gold-accent: #E5C378;
+  --gold-glow: rgba(229, 195, 120, 0.25);
+  --wa-green: #25D366;
+  --wa-green-hover: #1EBE5B;
+  --wa-shadow: 0 10px 30px rgba(37, 211, 102, 0.38);
+
+  --glass-bg: rgba(14, 23, 18, 0.68);
+  --glass-border: rgba(255, 255, 255, 0.14);
+  --glass-inner-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  --box-shadow-elevated: 0 30px 70px -15px rgba(0, 0, 0, 0.65);
+
+  --text-pure: #FFFFFF;
+  --text-soft: #D5DDD7;
+  --text-muted: #9BA79F;
+
+  /* Typography */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* =====================================================================
+   RESET & FOUNDATIONS
+   ===================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #0B120E;
+  color: var(--text-pure);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* =====================================================================
+   FULL-SCREEN CINEMATIC BACKDROP
+   ===================================================================== */
+.cinema-backdrop {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.cinema-backdrop img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.02);
+  transition: opacity 0.4s ease, transform 6s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform, opacity;
+}
+
+/* Cinematic Multi-layered Vignette Overlay (Ensures AAA legibility without turning pitch black) */
+.cinema-overlay {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at center 45%, rgba(10, 18, 14, 0.42) 0%, rgba(8, 14, 11, 0.78) 75%, rgba(5, 9, 7, 0.92) 100%),
+    linear-gradient(180deg, rgba(8, 14, 11, 0.55) 0%, rgba(8, 14, 11, 0.35) 45%, rgba(5, 9, 7, 0.88) 100%);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  pointer-events: none;
+}
+
+/* =====================================================================
+   PAGE VIEWPORT & CENTERING CONTAINER
+   ===================================================================== */
+.page-viewport {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 20px 24px;
+}
+
+/* =====================================================================
+   HERO CENTER BOX (LUXURY FROSTED GLASS CARD)
+   ===================================================================== */
+.hero-center-box {
+  width: 100%;
+  max-width: 580px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(28px) saturate(170%);
+  -webkit-backdrop-filter: blur(28px) saturate(170%);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--box-shadow-elevated), var(--glass-inner-shadow);
+  border-radius: 28px;
+  padding: 36px 36px 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: cardFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes cardFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(22px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =====================================================================
+   BRAND EMBLEM LOGO
+   ===================================================================== */
+.logo-wrapper {
+  margin-bottom: 16px;
+}
+
+.brand-crest {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45), 0 0 0 2px var(--gold-accent);
+  background: #15241C;
+  padding: 2px;
+  transition: transform 0.3s ease;
+}
+
+.brand-crest:hover {
+  transform: scale(1.05) rotate(2deg);
+}
+
+/* =====================================================================
+   LUXURY PRICE PROMO PILL
+   ===================================================================== */
+.promo-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, rgba(229, 195, 120, 0.16), rgba(184, 142, 60, 0.22));
+  border: 1px solid rgba(229, 195, 120, 0.45);
+  color: #F8ECD2;
+  padding: 6px 18px;
+  border-radius: 9999px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  box-shadow: 0 4px 18px var(--gold-glow);
+  margin-bottom: 18px;
+  letter-spacing: 0.01em;
+}
+
+.promo-pill strong {
+  color: #FFFFFF;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.sparkle-icon {
+  font-size: 0.95rem;
+}
+
+/* =====================================================================
+   MAIN HEADLINE & SUBTITLE
+   ===================================================================== */
+.main-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.025em;
+  line-height: 1.18;
+  margin-bottom: 12px;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.45);
+}
+
+.main-sub {
+  font-size: 0.96rem;
+  color: var(--text-soft);
+  line-height: 1.58;
+  max-width: 480px;
+  margin-bottom: 22px;
+  font-weight: 400;
+}
+
+/* =====================================================================
+   AMENITIES ROW (FACILITY PILLS)
+   ===================================================================== */
+.amenities-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 26px;
+  width: 100%;
+}
+
+.amenities-row span {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #E6EDE8;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.amenities-row span:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(229, 195, 120, 0.4);
+  transform: translateY(-1px);
+}
+
+/* =====================================================================
+   ACTION BUTTONS GROUP
+   ===================================================================== */
+.actions-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 22px;
+}
+
+/* WhatsApp Primary CTA */
+.btn-primary-whatsapp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #28E06C 0%, #1DB855 100%);
+  color: #062813;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 15px 24px;
+  border-radius: 16px;
+  box-shadow: var(--wa-shadow);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary-whatsapp svg {
+  width: 24px;
+  height: 24px;
+  fill: #062813;
+  flex-shrink: 0;
+}
+
+.btn-primary-whatsapp .wa-arrow {
+  font-size: 1.25rem;
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+
+.btn-primary-whatsapp:hover {
+  background: linear-gradient(135deg, #2DF074 0%, #20C45B 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px rgba(37, 211, 102, 0.52);
+}
+
+.btn-primary-whatsapp:hover .wa-arrow {
+  transform: translateX(4px);
+}
+
+.btn-primary-whatsapp:active {
+  transform: translateY(0);
+}
+
+/* Google Maps Glass Button */
+.btn-glass-maps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 13px 20px;
+  border-radius: 14px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.2s ease;
+}
+
+.btn-glass-maps svg {
+  width: 19px;
+  height: 19px;
+  fill: var(--gold-accent);
+}
+
+.btn-glass-maps:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.32);
+  transform: translateY(-1px);
+}
+
+/* =====================================================================
+   SECURITY REASSURANCE BANNER (VERIFIED ADMIN SHIELD)
+   ===================================================================== */
+.security-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.28);
+  border-radius: 12px;
+  padding: 11px 16px;
+  margin-bottom: 24px;
+  width: 100%;
+  text-align: left;
+}
+
+.security-banner .shield-icon {
+  width: 20px;
+  height: 20px;
+  fill: #F87171;
+  flex-shrink: 0;
+}
+
+.security-banner .security-text {
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: #FECACA;
+}
+
+.security-banner strong {
+  color: #FFFFFF;
+}
+
+.security-banner u {
+  text-underline-offset: 3px;
+}
+
+/* =====================================================================
+   BACKGROUND PHOTO SWITCHER STRIP
+   ===================================================================== */
+.bg-switcher-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  width: 100%;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bg-thumb-btn {
+  background: rgba(0, 0, 0, 0.35);
+  border: 2px solid transparent;
+  border-radius: 12px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.bg-thumb-btn img {
+  width: 100%;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.25s ease;
+}
+
+.bg-thumb-btn span {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.bg-thumb-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.bg-thumb-btn:hover img {
+  transform: scale(1.05);
+}
+
+.bg-thumb-btn:hover span {
+  color: #FFFFFF;
+}
+
+.bg-thumb-btn.active {
+  border-color: var(--gold-accent);
+  background: rgba(229, 195, 120, 0.14);
+  box-shadow: 0 4px 14px rgba(229, 195, 120, 0.3);
+}
+
+.bg-thumb-btn.active span {
+  color: var(--gold-accent);
+  font-weight: 700;
+}
+
+/* =====================================================================
+   CINEMA FOOTER
+   ===================================================================== */
+.cinema-footer {
+  margin-top: 18px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-align: center;
+  font-weight: 500;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* =====================================================================
+   RESPONSIVE DESIGN (MOBILE & SMALL SCREENS)
+   ===================================================================== */
+@media (max-width: 640px) {
+  .page-viewport {
+    padding: 20px 14px 18px;
+    justify-content: flex-start;
+  }
+
+  .hero-center-box {
+    padding: 26px 20px 22px;
+    border-radius: 24px;
+  }
+
+  .brand-crest {
+    width: 64px;
+    height: 64px;
+  }
+
+  .main-title {
+    font-size: 1.85rem;
+  }
+
+  .main-sub {
+    font-size: 0.88rem;
+    margin-bottom: 18px;
+  }
+
+  .promo-pill {
+    font-size: 0.85rem;
+    padding: 5px 14px;
+  }
+
+  .amenities-row {
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+
+  .amenities-row span {
+    font-size: 0.74rem;
+    padding: 5px 10px;
+  }
+
+  .btn-primary-whatsapp {
+    font-size: 0.98rem;
+    padding: 13px 20px;
+  }
+
+  .btn-glass-maps {
+    font-size: 0.9rem;
+    padding: 12px 18px;
+  }
+
+  .bg-thumb-btn img {
+    height: 42px;
+  }
+
+  .bg-thumb-btn span {
+    font-size: 0.68rem;
+  }
+}
+
+@media (max-height: 740px) and (min-width: 641px) {
+  /* Compact layout for shorter laptop viewports */
+  .hero-center-box {
+    padding: 24px 32px 20px;
+  }
+
+  .brand-crest {
+    width: 58px;
+    height: 58px;
+  }
+
+  .promo-pill {
+    margin-bottom: 12px;
+    padding: 4px 14px;
+  }
+
+  .main-title {
+    font-size: 1.95rem;
+    margin-bottom: 8px;
+  }
+
+  .main-sub {
+    font-size: 0.88rem;
+    margin-bottom: 16px;
+  }
+
+  .amenities-row {
+    margin-bottom: 18px;
+  }
+
+  .actions-group {
+    margin-bottom: 16px;
+    gap: 10px;
+  }
+
+  .security-banner {
+    margin-bottom: 16px;
+    padding: 8px 14px;
+  }
+
+  .bg-switcher-strip {
+    padding-top: 12px;
+  }
+
+  .bg-thumb-btn img {
+    height: 42px;
+  }
+}
